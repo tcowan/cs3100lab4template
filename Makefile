@@ -8,9 +8,9 @@ dummy:
 	@echo "   make freebad"
 	@echo "   make clean"
 
-.PHONY: null nullgdb nofree bounds datagone freebad canvas all
+.PHONY: null nullgdb nofree bounds datagone freebad all
 null: null.c
-	gcc -ggdb -o $@ $@.c
+	gcc -ggdb -Wall -Werror -o $@ $@.c
 	@echo "Running valgrind and logging to $@.log"
 	-valgrind --log-file=$@.log --leak-check=yes ./$@
 	@echo "----------------valgrind output for $@-----------------"
@@ -25,28 +25,28 @@ nullgdb: null
 	@cat $@.log
 
 nofree: nofree.c
-	gcc -ggdb -o $@ $@.c
+	gcc -ggdb -Wall -Werror -o $@ $@.c
 	@echo "Running valgrind and logging to $@.log"
 	-valgrind --log-file=$@.log --leak-check=yes ./$@
 	@echo "----------------valgrind output for $@-----------------"
 	@cat $@.log
 
 bounds: bounds.c
-	gcc -ggdb -o $@ $@.c
+	gcc -ggdb -Wall -Werror -o $@ $@.c
 	@echo "Running valgrind and logging to $@.log"
 	-valgrind --log-file=$@.log --leak-check=yes ./$@
 	@echo "----------------valgrind output for $@-----------------"
 	@cat $@.log
 
 datagone: datagone.c
-	gcc -ggdb -o $@ $@.c
+	gcc -ggdb -Wall -Werror -o $@ $@.c
 	@echo "Running valgrind and logging to $@.log"
 	-valgrind --log-file=$@.log --leak-check=yes ./$@
 	@echo "----------------valgrind output for $@-----------------"
 	@cat $@.log
 
 freebad: freebad.c
-	gcc -ggdb -o $@ $@.c
+	gcc -ggdb -Wall -Werror -o $@ $@.c
 	@echo "Running valgrind and logging to $@.log"
 	-valgrind --log-file=$@.log --leak-check=yes ./$@
 	@echo "----------------valgrind output for $@-----------------"

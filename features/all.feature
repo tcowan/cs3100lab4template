@@ -1,6 +1,6 @@
 Feature: Source files must be present, compilable and output correct information
 
-	Scenario: required files must have been uploaded to Canvas as a zip file
+	Scenario: required files must be found in the root of the repo
 		When a file named "../../null.c" should exist
 		And a file named "../../nofree.c" should exist
 		And a file named "../../bounds.c" should exist
