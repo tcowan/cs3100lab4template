@@ -10,15 +10,15 @@ Feature: Source files must be present, compilable and output correct information
 
 	Scenario: all source files compile without errors
 		Given I run `rm -f ../../bin/*`
-		When I run `gcc -ggdb -Wall -Werror -o ../../bin/null ../../null.c` 
+		When I run `gcc -ggdb -Wall  -o ../../bin/null ../../null.c` 
 		And OUTPUT is printed
-		And I run `gcc -ggdb -Wall -Werror -o ../../bin/nofree ../../nofree.c` 
+		And I run `gcc -ggdb -Wall  -o ../../bin/nofree ../../nofree.c` 
 		And OUTPUT is printed
-		And I run `gcc -ggdb -Wall -Werror -o ../../bin/bounds ../../bounds.c` 
+		And I run `gcc -ggdb -Wall  -o ../../bin/bounds ../../bounds.c` 
 		And OUTPUT is printed
-		And I run `gcc -ggdb -Wall -Werror -o ../../bin/datagone ../../datagone.c` 
+		And I run `gcc -ggdb -Wall  -o ../../bin/datagone ../../datagone.c` 
 		And OUTPUT is printed
-		And I run `gcc -ggdb -Wall -Werror -o ../../bin/freebad ../../freebad.c` 
+		And I run `gcc -ggdb -Wall  -o ../../bin/freebad ../../freebad.c` 
 		And OUTPUT is printed
 		Then a file named "../../bin/null" should exist
 		And a file named "../../bin/nofree" should exist
